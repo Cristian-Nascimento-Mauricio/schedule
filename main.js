@@ -13,6 +13,8 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
+  mainWindow.setMinimumSize(800,600)
+  //ainWindow.setMenu(null)
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
@@ -27,7 +29,7 @@ app.whenReady().then(() => {
 
   app.on('activate', function () {
 
-    
+
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 })
@@ -41,3 +43,4 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+

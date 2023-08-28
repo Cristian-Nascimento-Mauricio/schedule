@@ -1,0 +1,179 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    padding-top: 50px;
+    
+}
+
+.modal > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+    padding-top: 10px;
+    background-color: orange;
+}
+
+.modal  > form > .add-schedule-of-day {
+    width: 80%;
+    height: 100px;
+    background-color: azure;
+}
+
+.add {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    bottom: 20px;
+    right: 20px;
+    background-image: url(../Medias/PNG/button.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: aliceblue;
+}
+
+
+header  {
+    display: grid;
+    width: 100%;
+    height: 30px;
+    grid-template-columns: repeat(9,1fr);
+    background-color: aquamarine;
+}
+
+.menu-bar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    grid-column: 1/4;
+    background-color: blue;
+
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    grid-column: 4/7;
+    background-color: green;
+}
+.time {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+    padding-right: 10px;
+    grid-column: 7/10;
+    background-color: red;
+
+}
+
+.time > p {
+    font-size: 24px;
+
+}
+
+main { 
+    width: 100%;
+    height: 1000px;
+    padding: 10px;
+}
+
+.schedule {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.schedule-day {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0px;
+    flex-direction: column;
+    align-items: end;
+    background-color: blueviolet;
+
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 75px;
+    grid-template-columns: repeat(10,1fr);
+}
+.title {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    align-items: center;
+    grid-column: 1/8;
+    background-color: blue;
+
+}
+.title , .progress > p{
+    font-size: 36px;
+}
+
+.progress {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-column: 9/11;
+    background-color: rosybrown;
+
+}
+
+.list {
+    display: flex;
+    width: 95%;
+    height: fit-content;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    flex-direction: column;
+    padding: 0px 5px;
+}
+
+.item { 
+    display: flex;
+    width: 98%;
+    height: 30px;
+    padding-left: 5px;
+    margin: 5px 0px;
+    align-items: center;
+    background-color: yellowgreen;
+
+}
+
+.item > input{
+    width: 25px;
+    height: 25px;
+
+}
+
+.item > p {
+    margin: auto 5px;
+}

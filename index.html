@@ -2,18 +2,46 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <link href="./src/CSS/styles.css" rel="stylesheet">
+    <script type="module" src="./src/JS/javascript.js" defer></script>
+    <title>schedule</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div class="modal">
+      <form>
+        <div class="add-schedule-of-day"></div>
+      </form>
+    </div>
 
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <div class="add">
+
+
+    </div>
+    <header>
+
+      <div class="menu-bar"></div>
+      <div class="banner"></div>
+      <div class="time">
+        <p id="time"></p>
+      </div>
+
+    </header>
+
+    <main>
+      <div class="schedule">
+
+
+
+    </main>
+
   </body>
 </html>
+
+
+ <!--
+<div class="item">
+<input type="checkbox">
+<p>Texto generico</p>
+</div>
+-->

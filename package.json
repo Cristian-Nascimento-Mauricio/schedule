@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "schedule",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A simple schedule",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -13,9 +13,11 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Cristian Nascimento Maurício",
   "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^26.1.0"
+  "dependencies": {
+    "electron": "^26.1.0",
+    "electron-rebuild": "^3.2.9",
+    "sqlite3": "^5.1.6"
   }
 }
