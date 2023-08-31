@@ -1,54 +1,82 @@
-import { item, scheduleDay } from "./objects.js"
+import { item, schedule } from "./codeHTML.js"
 
 const time = document.getElementById("time")
-const schedule = document.querySelector('.schedule')
-const button = document.querySelector(".div-button")
-let arrayList = []
+const listSchedule = document.querySelector('.list-schedule')
+const menuBar = document.querySelector('.menu-bar-button')
 
-setDate()
 
-button.addEventListener('click',()=>{
-    document.querySelector('.schedule-of-day-list').innerHTML += '<div></div>'
-    console.log("Cliked")
+let list = []
+
+Object.keys(localStorage).forEach(key=>{
+    let myschedule = JSON.parse(localStorage.getItem(key))
+    list.push(myschedule)
+    console.log(myschedule)
 })
 
-for(var i = 0; i < 3;i++){
-    arrayList.push(new scheduleDay("Título testando",i,[ new item("texto"),new item("Outro texto"), new item("Mais texto") ]))
-}
-
-arrayList.forEach(element => {
-    schedule.innerHTML += element.html
-})
-
-document.querySelectorAll(".item input").forEach(element => {
-    element.addEventListener('click',  ()=>{
-
-    var valor = 0
-
-    element.parentElement.parentElement.querySelectorAll(".item input").forEach(subelement =>{
-        valor += subelement.checked ? 1:0
-
-        element.parentElement.parentElement.parentElement.querySelector(".container .progress p").innerHTML = (Math.round( (valor / element.parentElement.parentElement.querySelectorAll(".item").length)*100) + "%")
-    })
+list.forEach(element => {
+    listSchedule.innerHTML += schedule(element.id,element.title,element.progress)
+    element.itens.forEach(subElement =>{
+        document.querySelectorAll(".list-item")[document.querySelectorAll(".list-item").length-1].innerHTML += item(subElement.id,subElement.title,subElement.checkout)
     })
 })
 
-function setDate(){
-    const date = new Date
+listSchedule.querySelectorAll(".schedule .container").forEach(element =>{
+    element.addEventListener('click', (event)=>{
+        var id 
+        if(event.target.className == ''){
+            id = event.target.parentNode.parentNode.parentNode.id
+        } else {
+            id = event.target.parentNode.parentNode.id
+        } 
+        //console.log(id)
 
-    time.innerText = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` 
+        const close = document.getElementById(id)
 
-}
 
-const schedule_day = document.querySelectorAll(".schedule-day")
-
-schedule_day.forEach(element => {
-    element.querySelector(".container").addEventListener('click', () => {
-        if(element.querySelector(".list").clientHeight > 0){
-            element.querySelector(".list").style.height = "0px"
+        if(close.querySelector('.list-item').style.height != 'fit-content'){
+            close.querySelector('.list-item').style.height = 'fit-content'
         }else {
-            element.querySelector(".list").style.height = "fit-content"
-
+            close.querySelector('.list-item').style.height = '0px'
         }
-    });
-});
+   
+    })
+})
+
+document.querySelectorAll("input[type='checkbox']").forEach(element => {
+    element.addEventListener('click',(event)=>{
+        //console.log( event.target.parentNode.parentNode.parentNode.id )
+        event.target.parentNode.parentNode.parentNode.querySelector(".container .progress p").innerText = "100%"
+        var checkbox = event.target.parentNode.parentNode.querySelectorAll(".item input[type='checkbox']").length
+        var checkboxTrue = 0
+        event.target.parentNode.parentNode.querySelectorAll(".item input[type='checkbox']").forEach(element =>{
+            checkboxTrue += element.checked ? 1 :  0
+        })
+        event.target.parentNode.parentNode.parentNode.querySelector(".container .progress p").innerText = `${ Math.round( (checkboxTrue / checkbox)*100 )}%`
+
+        let obj = list.filter( (object) => object.id == event.target.parentNode.parentNode.parentNode.id )[0]
+        obj.progress = Math.round( (checkboxTrue / checkbox)*100 )
+        obj.itens.filter( (object) => object.id == event.target.parentNode.id)[0].checkout = event.target.checked
+        console.log(obj)
+        localStorage.setItem(obj.id, JSON.stringify( obj ))
+        console.log( JSON.parse( localStorage.getItem(obj.id) ) )
+
+    })
+})
+
+menuBar.addEventListener('click',()=>{
+    console.log(document.querySelector('.menu').style.display)
+
+    if(document.querySelector('.menu').style.display == 'none'){
+        document.querySelector('.menu').style.display = 'flex'
+    } else {
+        document.querySelector('.menu').style.display = 'none'
+    }
+})
+
+
+const date = new Date
+
+time.innerText = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}` // get days, month and year now and set time <p> 
+
+
+

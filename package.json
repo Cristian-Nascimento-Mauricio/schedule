@@ -16,8 +16,11 @@
   "author": "Cristian Nascimento Maurício",
   "license": "CC0-1.0",
   "dependencies": {
+    "electrn": "^0.0.1-security",
     "electron": "^26.1.0",
-    "electron-rebuild": "^3.2.9",
-    "sqlite3": "^5.1.6"
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^3.2.9"
   }
 }

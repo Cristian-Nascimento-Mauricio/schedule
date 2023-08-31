@@ -1,46 +1,21 @@
-export class scheduleDay {
+export function MySchedule(title,id) {
+  this.title = title
+  this.id = id
+  this.itens = []
+  this.progress = 0
 
-    constructor(title,id,list){
-      this.title = title
-      this.progress = 100
-      this.id = id
-      this.list = list
-      this.itens = ''
-      list.forEach(element => {
-        this.itens += element.html
-      });
-       
-      this.html = `
-      <div class="schedule-day" id="${this.id}">
-        <div class="container">
-            <div class="title">
-                <p>${this.title}</p>
-            </div>
-            <div class="progress">
-              <p>${this.progress}%</p>
-            </div>
-        </div>
-        <div class="list">
-          ${this.itens}
-        </div>
-      </div>
+};
 
-    </div>
-    ` 
-  }
+export function ItemForList(id,title) {
+  this.id = id
+  this.title = title
+  this.checkout = false
 
 }
 
-export class item {
+export function getDate() {
+    const now = new Date()
 
-  constructor(title){
-    this.title = title
-    this.html = `
-    <div class="item">
-      <input type="checkbox" >
-      <p>${this.title}</p>
-    </div>
-    `
-  }
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`
 
 }

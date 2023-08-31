@@ -5,9 +5,14 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./src/CSS/styles.css" rel="stylesheet">
     <script type="module" src="./src/JS/javascript.js" defer></script>
+    <script type="module" src="./src/JS/addNewScheduleDay.js" defer></script>
     <title>schedule</title>
   </head>
   <body>
+    <div class="menu">
+
+    </div>
+ 
     <div class="modal">
       <form>
         <div class="add-schedule-of-day">
@@ -19,14 +24,24 @@
             </div>
 
             <div class="div-button">
-              
+              <div></div>
+            </div>
+          </div>
+          <div class="schedule-of-day-list">
+
+            <div class="add-item" id="0">
+              <input>
+              <div>
+                <img src="./src/Medias/PNG/tash.png">
+              </div>
             </div>
 
           </div>
-          <div class="schedule-of-day-list">
-            <div></div>
 
-          </div>
+        </div>
+        <div class="salved">
+          <div id="canceled"><p>canceled</p></div>
+          <div id="salved"><p>salved</p></div>
 
         </div>
       </form>
@@ -34,11 +49,14 @@
 
     <div class="add">
 
-
     </div>
     <header>
 
-      <div class="menu-bar"></div>
+      <div class="menu-bar">
+        <div class="menu-bar-button">
+          
+        </div>
+      </div>
       <div class="banner">
         <img src="./src/Medias/PNG/logo.png">
       </div>
@@ -49,9 +67,11 @@
     </header>
 
     <main>
-      <div class="schedule">
+
+      <div class="list-schedule">
 
 
+      </div>
 
     </main>
 
