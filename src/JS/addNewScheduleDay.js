@@ -1,4 +1,4 @@
-import { add_item, vaoidList } from "./codeHTML.js"
+import { add_item, item, schedule, vaoidList } from "./codeHTML.js"
 import { ItemForList, MySchedule, getDate } from "./objects.js"
 
 const buttonAddSchedule = document.querySelector(".add")
@@ -8,6 +8,7 @@ const listItem = document.querySelector(".schedule-of-day-list")
 var buttonTash = document.querySelectorAll(".schedule-of-day-list .add-item div img")
 const canceled = document.getElementById("canceled")
 const salved = document.getElementById("salved")
+const listSchedule = document.querySelector('.list-schedule')
 
 var id = 1 
 modal.style.display = "none";
@@ -26,7 +27,6 @@ canceled.addEventListener('click', ()=>{
 })
 
 
-localStorage.clear
 
 salved.addEventListener('click',()=>{
     const date = new Date
@@ -43,8 +43,12 @@ salved.addEventListener('click',()=>{
     listItem.innerHTML=vaoidList
 
     localStorage.setItem(myschedule.id,JSON.stringify(myschedule)) 
+    
+    listSchedule.innerHTML +=schedule(myschedule.id,myschedule.title,myschedule.progress)
+    myschedule.itens.forEach(element =>{
+        document.querySelectorAll(".list-item")[document.querySelectorAll(".list-item").length-1].innerHTML += item(element.id,element.title,element.checkout)
+    })
 
-    console.log( JSON.parse( localStorage.getItem(myschedule.id) ) )
 
 })
 

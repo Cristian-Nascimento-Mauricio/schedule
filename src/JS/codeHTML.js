@@ -2,7 +2,7 @@ export const vaoidList = `
 <div class="add-item" id="0">
     <input>
     <div>
-        <img src="./src/Medias/PNG/tash.png">
+        <img src="../Medias/PNG/tash.png">
     </div>
 </div>
 `
@@ -11,7 +11,7 @@ export function add_item(id){
 <div class="add-item" id="${id}">
     <input>
     <div>
-        <img src="./src/Medias/PNG/tash.png">
+        <img src="../Medias/PNG/tash.png">
     </div> 
 </div>
 `
@@ -19,14 +19,19 @@ export function add_item(id){
 export function schedule(id,title,progress){
     return `
     <div class="schedule" id="${id}">
-        <div class="container">
-            <div class="title">
-                <p>${title}</p>
+        <label for="${id/2}">
+            <div class="container">
+                <div class="title">
+                    <p>${title}</p>
+                </div>
+                <div class="progress">
+                    <p>${progress}%</p>
+                </div>
             </div>
-            <div class="progress">
-                <p>${progress}%</p>
-            </div>
-        </div>
+
+        </label>
+        <input type="checkbox" class="checkbox-open-list" id="${id/2}"}> 
+
         <div class="list-item">
 
         </div>

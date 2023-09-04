@@ -15,11 +15,10 @@ function createWindow () {
 
   mainWindow.setMinimumSize(800,600)
   //ainWindow.setMenu(null)
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./src/HTML/index.html')
 
 
 }
-
 
 
 app.whenReady().then(() => {

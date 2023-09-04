@@ -2,7 +2,6 @@ import { item, schedule } from "./codeHTML.js"
 
 const time = document.getElementById("time")
 const listSchedule = document.querySelector('.list-schedule')
-const menuBar = document.querySelector('.menu-bar-button')
 
 
 let list = []
@@ -17,28 +16,6 @@ list.forEach(element => {
     listSchedule.innerHTML += schedule(element.id,element.title,element.progress)
     element.itens.forEach(subElement =>{
         document.querySelectorAll(".list-item")[document.querySelectorAll(".list-item").length-1].innerHTML += item(subElement.id,subElement.title,subElement.checkout)
-    })
-})
-
-listSchedule.querySelectorAll(".schedule .container").forEach(element =>{
-    element.addEventListener('click', (event)=>{
-        var id 
-        if(event.target.className == ''){
-            id = event.target.parentNode.parentNode.parentNode.id
-        } else {
-            id = event.target.parentNode.parentNode.id
-        } 
-        //console.log(id)
-
-        const close = document.getElementById(id)
-
-
-        if(close.querySelector('.list-item').style.height != 'fit-content'){
-            close.querySelector('.list-item').style.height = 'fit-content'
-        }else {
-            close.querySelector('.list-item').style.height = '0px'
-        }
-   
     })
 })
 
@@ -63,15 +40,7 @@ document.querySelectorAll("input[type='checkbox']").forEach(element => {
     })
 })
 
-menuBar.addEventListener('click',()=>{
-    console.log(document.querySelector('.menu').style.display)
 
-    if(document.querySelector('.menu').style.display == 'none'){
-        document.querySelector('.menu').style.display = 'flex'
-    } else {
-        document.querySelector('.menu').style.display = 'none'
-    }
-})
 
 
 const date = new Date
