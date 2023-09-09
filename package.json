@@ -18,7 +18,8 @@
   "dependencies": {
     "electrn": "^0.0.1-security",
     "electron": "^26.1.0",
-    "sequelize": "^6.32.1"
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "electron-rebuild": "^3.2.9"

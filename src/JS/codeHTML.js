@@ -16,16 +16,19 @@ export function add_item(id){
 </div>
 `
 }
-export function schedule(id,title,progress){
+export function schedule(title){
     return `
-    <div class="schedule" id="${id}">
-        <label for="${id/2}">
+    <div class="schedule" >
+        <label for="">
             <div class="container">
                 <div class="title">
                     <p>${title}</p>
                 </div>
                 <div class="progress">
-                    <p>${progress}%</p>
+                    <p>0%</p>
+                </div>
+                <div class="tash">
+                    <img src="../Medias/PNG/tash.png" >
                 </div>
             </div>
 
@@ -42,7 +45,7 @@ export function schedule(id,title,progress){
 export function item(id,title,checked){
     return`
     <div class="item" id="${id}">
-        <input type="checkbox" ${checked ? "checked":""}>
+        <input type="checkbox" class="item-checkbox" ${checked ? "checked":""}>
         <p>${title}</p>
     </div>
     `

@@ -1,0 +1,114 @@
+{
+    
+    "pt-br":{
+         "pages":{
+
+            "index":{
+              "canceled":"cancelar",
+              "salved":"salvar"
+            },
+            "settings":{
+                "dark-screen-title":"Modo escuro",
+                "dark-screen-description":"Você desejar colocar a sua agenda no modo escuro ? ",
+
+                "reset-localStorage-title":"Resetar",
+                "reset-localStorage-description":"Você desejar resetar toda a sua agenda ?",
+                "reset-localStorage-button":"Resetar",
+
+                "select-language-title":"Selecione um idioma",
+                "select-language-portuguese":"Português",
+                "select-language-english":"Inglês",
+                "select-language-japanese":"Japonês",
+                "select-language-spanish":"Espanhol"
+
+            }
+            },
+        "menu":{
+            "item-menu-main":"Principal",
+            "item-menu-settings":"Configurações",
+            "item-menu-statics":"Estaticas"
+        
+        }
+
+    },
+    "es": {
+        "pages": {
+          "index": {
+
+          },
+          "settings": {
+            "dark-screen-title": "Modo oscuro",
+            "dark-screen-description": "¿Desea poner su agenda en modo oscuro?",
+    
+            "reset-localStorage-title": "Restablecer",
+            "reset-localStorage-description": "¿Desea restablecer toda su agenda?",
+            "reset-localStorage-button": "Restablecer",
+    
+            "select-language-title": "Seleccione un idioma",
+            "select-language-portuguese": "Portugués",
+            "select-language-english": "Inglés",
+            "select-language-japanese": "Japonés",
+            "select-language-spanish": "Español"
+          }
+        },
+        "menu": {
+          "item-menu-main": "Principal",
+          "item-menu-settings": "Configuraciones",
+          "item-menu-statics": "Estadísticas"
+        }
+    },
+    "en": {
+        "pages": {
+          "index": {
+
+          },
+          "settings": {
+            "dark-screen-title": "Dark Mode",
+            "dark-screen-description": "Would you like to enable dark mode for your agenda?",
+    
+            "reset-localStorage-title": "Reset",
+            "reset-localStorage-description": "Would you like to reset your entire agenda?",
+            "reset-localStorage-button": "Reset",
+    
+            "select-language-title": "Select a Language",
+            "select-language-portuguese": "Portuguese",
+            "select-language-english": "English",
+            "select-language-japanese": "Japanese",
+            "select-language-spanish": "Spanish"
+          }
+        },
+        "menu": {
+          "item-menu-main": "Main",
+          "item-menu-settings": "Settings",
+          "item-menu-statics": "Statistics"
+        }
+    },
+    "ja": {
+        "pages": {
+          "index": {
+            
+          },
+          "settings": {
+            "dark-screen-title": "ダークモード",
+            "dark-screen-description": "アジェンダをダークモードに設定しますか？",
+    
+            "reset-localStorage-title": "リセット",
+            "reset-localStorage-description": "アジェンダ全体をリセットしますか？",
+            "reset-localStorage-button": "リセット",
+    
+            "select-language-title": "言語を選択",
+            "select-language-portuguese": "ポルトガル語",
+            "select-language-english": "英語",
+            "select-language-japanese": "日本語",
+            "select-language-spanish": "スペイン語"
+          }
+        },
+        "menu": {
+          "item-menu-main": "メイン",
+          "item-menu-settings": "設定",
+          "item-menu-statics": "統計情報"
+        }
+  }
+
+    
+}

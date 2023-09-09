@@ -6,14 +6,46 @@
 }
 
 .menu {
-    position:fixed;
-    display: none;
-    width: 200px;
+    position:absolute;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    transition-property: all;
+    transition-duration: 500ms;
+    padding-top: 20px;
+    overflow-x: hidden;
+    width: 0px;
     height: 100%;
     background-color: whitesmoke;
     top: 40px;
 }
+.item-menu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 5px 0px;
+    transition-property: all;
+    transition-duration: 500ms;
+    text-decoration: none;
+    padding: 0px 5px;
+    color: black;
+    width: 80%;
+    height: 40px;
+    overflow-x: hidden;
+    background-color: red;
+}
+.item-menu:hover {
+    width: 90%;
+}
+.item-menu > img {
+    margin: 0px  0px 0px;
+}
 
+.item-menu > p {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 24px;
+}
 
 header  {
     display: grid;
@@ -32,14 +64,24 @@ header  {
     grid-column: 1/4;
     align-items: center;
 }
+.menu-bar > label {
+    width: fit-content;
+    height: fit-content;
+}
+
 .menu-bar-button{
-    
     width: 32px;
     height: 32px;
     background-image: url(../Medias/PNG/menu-bar.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
 
+#checkbox-open-menu {
+    display: none;
+}
+#checkbox-open-menu:checked + .menu {
+    width: 180px;
 }
 
 .banner {
@@ -70,22 +112,43 @@ header  {
 main {
     width: 100%;
     height: 500px;
-    padding-left: 15px;
+    padding-left: 30px;
 
 }
 .dark-screen {
     display: flex;
+    flex-direction: column;
     width: fit-content;
+    margin: 20px 0px;
     height: 50px;
-    align-items: center;
 }
+.dark-screen  > h4 {
+    margin: 0;
+    padding: 0;
+}
+.dark-screen > p {
+    font-size: 16px;
+    color: grey;
+}
+
+
 .reset-localStorage {
     display: flex; 
     flex-direction: column;
+    margin: 20px 0px;
     width: fit-content;
     height: fit-content;
     
 }
+.reset-localStorage  > h4 {
+    margin: 0;
+    padding: 0;
+}
+.reset-localStorage > p {
+    font-size: 16px;
+    color: grey;
+}
+
 .reset-localStorage > button {
     width: 80px;
     height: 40px;
@@ -99,6 +162,7 @@ main {
 .select-language {
     display: flex;
     flex-direction: column;
+    margin: 20px 0px;
     width: 250px;
     height: fit-content;
     align-items: start;
@@ -126,31 +190,32 @@ main {
     height: 0px;
     background-color: red;
     overflow: hidden;
-    align-items: end;
+    align-items: start;
 
 }
 .list-languages > div {
     display: flex;
-    width: 80%;
+    width: 65%;
     height: 40px;
-    padding-left: 5px;
+    padding: 0px 5px;
     margin: 5px 0px;
     align-items: center;
+    justify-content: end;
     background-color: aqua;
     transition-property: all;
     transition-duration: 500ms;
+
 }
 
 
 .list-languages > div > p {
     margin-left: 5px;
+    width: 100%;
 
 }
 
-
 .list-languages > div:hover{
-    width: 95%;
-
+    width: 75%;
 }
 
 input:checked  ~ .list-languages {

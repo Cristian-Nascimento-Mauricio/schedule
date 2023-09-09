@@ -5,8 +5,13 @@
     margin: 0;
 }
 
+label {
+    width: fit-content;
+    height: fit-content;
+}
+
 .modal {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: top;
     align-items: center;
@@ -25,7 +30,7 @@
     min-height: 400px;
     height: fit-content;
     padding-top: 10px;
-    background-color: yellow;
+    background-color: white;
     border: 1px solid black;
     border-radius: 25px;
 }
@@ -49,11 +54,16 @@
     justify-content: center;
     align-items: center;
 }
-.salved > div {
+.salved > label {
+    margin: auto 30px;
+    width: fit-content;
+
+}
+
+.salved > label > div {
     display: flex;
     width: 100px;
     height: 60%;
-    margin: auto 30px;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
@@ -61,7 +71,7 @@
     background-color: beige;
 }
 
-.salved > div > p {
+.salved > label > div > p {
     font-size: 18px;
 }
 
@@ -70,8 +80,10 @@
     width: 100%;
     height: 80px;
     border: 1px solid black;
-    padding: 1px;
     grid-template-columns: repeat(10,1fr);
+    margin-bottom: 5px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px 2px black;
 
 }
 
@@ -79,15 +91,16 @@
     display: flex;
     width: 100%;
     height: 100%;
+    background-color:rgb(185, 185, 185);
     padding-left: 10px;
     align-items: center;
     grid-column: 1/9; 
-    background-color: red; 
-    
+    border-radius: 25px 0px 0px 25px;
+
 }
 .div-input > input{
     width: 98%;
-    height: 50px;
+    height: 45px;
     font-size: 24px;
     padding-left: 3px;
     border: 0px;
@@ -102,37 +115,46 @@
     justify-content: center;
     align-items: center;
     grid-column: 9/11;
+    background-color: rgb(185, 185, 185);
+    border-radius: 0px 25px 25px 0px;
+
 
 }
 .div-button > div {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    background-color: blueviolet;
-    background-image: url(../Medias/PNG/button.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: whitesmoke url(../Medias/PNG/button.png) no-repeat center/cover;
+    transition: all 500ms;
      
+}
+.div-button > div:hover { 
+    transform: scale(1.2);
 }
 
 
 .schedule-of-day-list {
+ 
     width: 95%;
     height: fit-content;
-    max-height: 250px;
+    max-height: 245px;
     overflow-y:scroll;
     
 }
 
 .add-item {
     display: flex;
-    width: 100%;
+    width: 95%;
     height: 60px;
     justify-content: start;
     align-items: center;
     padding-left: 10px;
-    margin: 5px 0px;
-    background-color: chartreuse;
+    margin: 5px auto;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 2px black;
+
 }
 
 .add-item > input {
@@ -159,28 +181,65 @@
     border-radius: 30px;
     bottom: 20px;
     right: 20px;
+    transition: all 500ms;
     background-image: url(../Medias/PNG/button.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-color: aliceblue;
 }
+.add:hover {
+    transform: scale(1.2);
 
-.menu {
-    position:fixed;
+}
+#checkbox-open-modal{
+    display: none;
+}
+#checkbox-open-modal:checked + .modal{
     display: flex;
+}
+#checkbox-open-modal:not(:checked) + .modal{
+    display: none;
+}
+.menu {
+    position:absolute;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
     transition-property: all;
     transition-duration: 500ms;
+    padding-top: 20px;
     overflow-x: hidden;
     width: 0px;
     height: 100%;
     background-color: whitesmoke;
     top: 40px;
+
 }
-#checkbox-open-menu {
-    display: none;
+.item-menu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 5px 0px;
+    transition-property: all;
+    transition-duration: 500ms;
+    text-decoration: none;
+    padding: 0px 5px;
+    color: black;
+    width: 80%;
+    height: 40px;
+    overflow-x: hidden;
+    background-color: red;
 }
-#checkbox-open-menu:checked + .menu {
-    width: 150px;
+.item-menu:hover {
+    width: 90%;
+}
+.item-menu > img {
+    margin: 0px  0px 0px;
+}
+.item-menu > p {
+    width: 100%;
+    white-space: nowrap;
+    font-size: 24px;
 }
 
 header  {
@@ -190,6 +249,7 @@ header  {
     grid-template-columns: repeat(9,1fr);
     box-shadow: 0px 2px 3px black;
     background-color: #fff44f;
+
 }
 
 .menu-bar {
@@ -200,14 +260,24 @@ header  {
     grid-column: 1/4;
     align-items: center;
 }
+.menu-bar > label {
+    width: fit-content;
+    height: fit-content;
+}
+
 .menu-bar-button{
-    
     width: 32px;
     height: 32px;
     background-image: url(../Medias/PNG/menu-bar.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
 
+#checkbox-open-menu {
+    display: none;
+}
+#checkbox-open-menu:checked ~ .menu {
+    width: 180px;
 }
 
 .banner {
@@ -238,9 +308,12 @@ header  {
 
 main { 
     width: 100%;
-    height: 3000px;
+    height: 700px;
     padding: 10px;
-    background-color: blueviolet;
+    background-image: url(../Medias/JPEG/k-on.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
 }
 
 .list-schedule  {
@@ -249,7 +322,6 @@ main {
     height: fit-content;
     align-items: center;
     flex-direction: column;
-    background-color: red;
 
 }
 
@@ -269,11 +341,6 @@ main {
     height: fit-content;
 }
 
-label {
-    width: 100%;
-    height: 100%;
-}
-
 .container {
     display: flex;
     width: 100%;
@@ -282,6 +349,10 @@ label {
     box-shadow: 0px 0px 5px 2px black;
     border-radius: 5px 5px 0px 5px;
 
+}
+.schedule > label {
+    width: 100%;
+    height: 100%;
 }
 
 .title {
@@ -307,6 +378,22 @@ label {
 }
 .progress > p {
     font-size: 38px;
+}
+.progress:hover{
+    display: none;
+}
+.progress:hover  + .tash{
+    display: flex;
+
+}
+
+.tash {
+    display: none;
+    width: 15%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .list-item{

@@ -4,22 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/settings.css">
-    <script src="../JS/settings.js" defer></script>
+    <script type="module" src="../JS/settings.js" defer></script>
     <title>Settings</title>
 </head>
 <body>
 
-    <div class="menu">
-        <a href="./src/HTML/settings.html">ir para configurações</a>
-    </div>
+  <input type="checkbox" id="checkbox-open-menu">
+  <div class="menu">   
+
+    <a class="item-menu" href="../HTML/index.html" id="item-menu-main">
+      <p>Main page</p>
+      <img src="../Medias/PNG/menu-pag.png">
+    </a>
+
+    <a class="item-menu" href="#" id="item-menu-settings" >
+      <p>Settings</p>
+      <img src="../Medias/PNG/settings.png">
+    </a>
+
+    <a class="item-menu" href="../HTML/settings.html" id="item-menu-statics">
+      <p>Statics</p>
+      <img src="../Medias/PNG/statics.png">
+    </a>
+
+  </div>
 
     <header>
 
       <div class="menu-bar">
-        <div class="menu-bar-button">
-            
-        </div>
+        <label for="checkbox-open-menu">
+          <div class="menu-bar-button"></div>
+        </label>
       </div>
+      
       <div class="banner">
         <img src="../Medias/PNG/logo.png">
       </div>
@@ -32,16 +49,18 @@
     <main>
       <div class="settings">
 
-          <div class="dark-screen">
-            <p>Dark Screen mode: </p>
+          <div class="dark-screen" id="dark-screen">
+            <h5>Dark Screen</h5>
+            <p>turn on dark screen mode: </p>
           </div>
 
-          <div class="reset-localStorage">
+          <div class="reset-localStorage" id="reset-localStorage">
+            <h5>Reset</h5>
             <p>Do you want to reset your schedule ? </p>
             <button>Reset</button>
           </div>
 
-          <div class="select-language">
+          <div class="select-language" id="select-language">
             <input type="checkbox" id="checkbox-list-langagues">
             <label for="checkbox-list-langagues">
               <p>Select a langague</p>
@@ -51,31 +70,29 @@
             <div class="list-languages">
               
               <div class="portuguese">
-                  <img src="../Medias/PNG/brazil.png">
                   <p>Portuguese</p>
+                  <img src="../Medias/PNG/brazil.png">
               </div>
 
               <div class="english">
-                <img src="../Medias/PNG/united-states.png">
                 <p>English</p>
+                <img src="../Medias/PNG/united-states.png">
               </div>
               <div class="japanese">
-                <img src="../Medias/PNG/japan.png">
                 <p>Japanese</p>
+                <img src="../Medias/PNG/japan.png">
               </div>
               <div class="spanish">
-                <img src="../Medias/PNG/spain.png">
                 <p>Spanish</p>
+                <img src="../Medias/PNG/spain.png">
               </div>
 
             </div>
           </div>
         
-
       </div>
 
     </main>
-
 
 </body>
 </html>

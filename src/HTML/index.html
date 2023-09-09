@@ -2,19 +2,36 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="../CSS/styles.css" rel="stylesheet">
     <script type="module" src="../JS/addNewScheduleDay.js" defer></script>
-    <script type="module" src="../JS/javascript.js" defer></script>
+    <script type="module" src="../JS/javascript.js"></script>
+    <script type="module" src="../../renderer.js" defer></script>
     <title>schedule</title>
   </head>
   <body>
+    
     <input type="checkbox" id="checkbox-open-menu">
+   
+      <div class="menu">   
 
-    <div class="menu">      
-      <a href="./src/HTML/settings.html">ir para configurações</a>
-    </div>
+        <a class="item-menu" href="#" id="item-menu-main">
+          <p>Main page</p>
+          <img src="../Medias/PNG/menu-pag.png">
+        </a>
+    
+        <a class="item-menu" href="..//HTML/settings.html" id="item-menu-settings" >
+          <p>Settings</p>
+          <img src="../Medias/PNG/settings.png">
+        </a>
+    
+        <a class="item-menu" href="../HTML/settings.html" id="item-menu-statics">
+          <p>Statics</p>
+          <img src="../Medias/PNG/statics.png">
+        </a>
+    
+      </div>
  
+    <input type="checkbox" id="checkbox-open-modal">
     <div class="modal">
       <form>
         <div class="add-schedule-of-day">
@@ -42,15 +59,21 @@
 
         </div>
         <div class="salved">
-          <div id="canceled"><p>canceled</p></div>
-          <div id="salved"><p>salved</p></div>
-
+          <label for="checkbox-open-modal">
+            <div id="canceled"><p>canceled</p></div>
+          </label>
+          <label>
+            <div id="salved"><p>salved</p></div>
+          </label>
         </div>
       </form>
     </div>
 
-    <div class="add">
-
+    <div style="width: fit-content; height: fit-content;">
+      <label for="checkbox-open-modal">
+        <div class="add">
+      </label>
+    </div>
     </div>
     <header>
 
@@ -72,7 +95,6 @@
 
       <div class="list-schedule">
 
-        
 
       </div>
 

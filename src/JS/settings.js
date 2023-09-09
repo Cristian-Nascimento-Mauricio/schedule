@@ -1,5 +1,10 @@
+import { setLanguage } from "./objects.js"
+
 const menuBar = document.querySelector('.menu-bar-button')
 const languges = document.querySelectorAll('.select-language div')
+
+setLanguage()
+
 
 languges.forEach(element =>{
     element.addEventListener('click',(event)=>{
@@ -10,16 +15,4 @@ languges.forEach(element =>{
             console.log(event.target.parentNode.className)
         }
     })
-})
-
-
-
-menuBar.addEventListener('click',()=>{
-    console.log(document.querySelector('.menu').style.display)
-
-    if(document.querySelector('.menu').style.display == 'none'){
-        document.querySelector('.menu').style.display = 'flex'
-    } else {
-        document.querySelector('.menu').style.display = 'none'
-    }
 })
